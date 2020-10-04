@@ -34,6 +34,10 @@ public class Stats {
         return this.attack;
     }
 
+    public int getLevel(){
+        return this.level;
+    }
+
     public int getDefence(){
         return this.defence;
     }
@@ -63,6 +67,13 @@ public class Stats {
         this.defence += defence;
         if(this.defence <= 0){
             this.defence = 0;
+        }
+    }
+
+    public void setHitPoints(int hitPoints){
+        this.hitPoints += hitPoints;
+        if(this.hitPoints <= 0){
+            this.hitPoints = 0;
         }
     }
 

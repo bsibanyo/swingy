@@ -54,34 +54,36 @@ public class Controller {
         }
     }
 
-    public static boolean inLuck(){
+    public static boolean dropChance(){
         Random random = new Random();
-        int luck = random.nextInt(2) + 1;
+        int chance = random.nextInt(2) + 1;
 
-        if (luck == 1)
+        if (chance == 1)
             return true;
         return false;
     }
 
     public static int fight(Hero hero, Villian enemy){
 
-        int fight = 0, won = 0, hit = 0;
+        int fight = 0;
+        int won = 0;
+        int hit = 0;
         Random random = new Random();
 
-        if (inLuck() == true || hero.getHeroStats().getPower() > enemy.getPower()) {
+        if (dropChance() == true || hero.getHeroStats().getPower() > enemy.getPower()) {
             fight = 1;
         }
 
         if (hero.getHeroStats().getHitPoints() > 0) {
             while (hero.getHeroStats().getHitPoints() > 0 && enemy.getHitPoints() > 0) {
-                System.out.println("Hero hp: " + hero.getHeroStats().getHitPoints());
-                System.out.println("Enemy hp: " + enemy.getHitPoints());
+                System.out.println("Your HP: " + hero.getHeroStats().getHitPoints());
+                System.out.println("Enemy HP: " + enemy.getHitPoints());
                 if (fight == 0) {
                     hit = random.nextInt(30) + 1;
                     if (enemy.getHitPoints() > 0) {
                         hero.getHeroStats().setHitPoints(-hit);
                         ReadFromFile.updateFile(hero);
-                        System.out.println("The Enemy attacked you and you lost " + hit + " hitpoints.");
+                        System.out.println("The Enemy attacked you and you were to damaged to continue " + hit + " hitpoints.");
 
                         if (hero.getHeroStats().getHitPoints() <= 0) {
                             won = 0;
@@ -89,11 +91,12 @@ public class Controller {
                         }
                         fight = 1;
                     }
-                } else if (fight == 1) {
+                }
+                else if (fight == 1) {
                     hit = random.nextInt(50) + 1;
                     if (hero.getHeroStats().getHitPoints() > 0) {
                         enemy.setHitPoints(-hit);
-                        System.out.println("You attacked the Villian and gave " + hit + " damage.");
+                        System.out.println("You attacked the Enemy and gave " + hit + " damage.");
                         if (enemy.getHitPoints() <= 0) {
                             won = 1;
                             break;
