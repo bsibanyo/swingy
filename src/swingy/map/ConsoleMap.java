@@ -149,7 +149,7 @@ public class ConsoleMap {
                 "Attack: " + hero.getHeroStats().getAttack() + "| " +
                 "Defence: " + hero.getHeroStats().getDefence() + "| " +
                 "Hit Points: " + hero.getHeroStats().getHitPoints() + "| " +
-                "Experience: " + hero.getHeroStats().getExperience() + "\n\n");
+                "Experience: " + hero.getHeroStats().getExperience() + "\n");
 
         for (int y = 0; y < mapY; y++){
             for(int x = 0; x < mapX; x++){

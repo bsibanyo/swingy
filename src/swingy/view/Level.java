@@ -10,7 +10,7 @@ public class Level extends ShowHero{
     public static int showDetails(long Choice, String player, Hero hero){
         System.out.println("\nWelcome to SWINGY " + player + "\n");
         if(Choice == 1){
-            System.out.println("You're Adventurous");
+            System.out.println("Character: Adventurous");
             System.out.println("\n--------------------------------------------------------------\n");
             System.out.println("Level: " + hero.getHeroStats().getLevel() + "\n");
             System.out.println("Attack: " + hero.getHeroStats().getAttack() + "\n");
@@ -21,7 +21,7 @@ public class Level extends ShowHero{
             gameChoice();
         }
         else if(Choice == 2){
-            System.out.println("You're Bulky");
+            System.out.println("Character: Bulky");
             System.out.println("\n--------------------------------------------------------------\n");
             System.out.println("Level: " + hero.getHeroStats().getLevel() + "\n");
             System.out.println("Attack: " + hero.getHeroStats().getAttack() + "\n");

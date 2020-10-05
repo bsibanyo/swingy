@@ -55,8 +55,8 @@ public class ShowHero
             }
             else
             {
-                System.out.println("Invalid input\nPlease press Enter to Continue");
-                enterScanner.nextLine();
+                System.out.println("Invalid input\n");
+                // enterScanner.nextLine();
             }
         }
         return choice;
@@ -66,7 +66,7 @@ public class ShowHero
     {
         System.out.println("");
         System.out.println("\n-------------------------------------------------\n");
-        System.out.println("Select your AVATOR!\n");
+        System.out.println("                  Select your AVATOR!\n");
         System.out.println("1: Deadpool");
         System.out.println("2: Hulk");
         System.out.println("\n-------------------------------------------------\n");
@@ -84,8 +84,8 @@ public class ShowHero
             }
             else
             {
-                System.out.println("Invalid input\nPlease press Enter to Continue");
-                enterScanner.nextLine();
+                System.out.println("Invalid input\n");
+                // enterScanner.nextLine();
             }
         }
         return choice;

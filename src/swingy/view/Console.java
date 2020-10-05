@@ -34,7 +34,8 @@ public class Console {
                 }
                 else
                 {
-                    System.out.println("\n-------------BYE-------------------\n");
+                    System.out.println("\n-------------SEE YOU SOON.-------------------\n");
+                    System.out.println("\n-----------------BYE-------------------\n");
                     System.exit(0);
                 }
             }
@@ -53,14 +54,14 @@ public class Console {
                             }
                         }
                         catch(Exception e){
-                            System.out.println("Invalid input\nPlease press Enter to Continue");
-                            enterScanner.nextLine();
+                            System.out.println("Invalid input\n");
+                            // enterScanner.nextLine();
                         }
                     }
                     else
                     {
-                        System.out.println("Invalid input\nPlease press Enter to Continue");
-                        enterScanner.nextLine();
+                        System.out.println("Invalid input\n");
+                        // enterScanner.nextLine();
                     }
                 }
                 hero = BeginGame.heroDB(ReadFromFile.getHero(choice));
