@@ -64,12 +64,11 @@ public class ShowHero
 
     public static int showHeroSelection()
     {
-        System.out.println("Select your AVATOR!");
         System.out.println("");
         System.out.println("\n-------------------------------------------------\n");
-        System.out.println("");
-        System.out.println("1: Assassin");
-        System.out.println("2: Ninja");
+        System.out.println("Select your AVATOR!\n");
+        System.out.println("1: Deadpool");
+        System.out.println("2: Hulk");
         System.out.println("\n-------------------------------------------------\n");
 
         int choice = 0;
@@ -95,7 +94,7 @@ public class ShowHero
     public static void crossRoad()
     {
         System.out.println("\n-------------------------------------------------\n");
-        System.out.println("You are at the crossroad.\nIf you go South, you will go back to the town.\n");
+        System.out.println("You are at the crossroad.\n Choose a direction to move.\n");
         System.out.println("1: Go north");
         System.out.println("2: Go east");
         System.out.println("3: Go south");

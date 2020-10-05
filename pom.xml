@@ -84,7 +84,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.bsibanyo.swingy.main</mainClass>
+                            <mainClass>swingy.main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -2,29 +2,33 @@ package swingy.view;
 
 import java.util.*;
 import swingy.model.CreateHero.Hero;
-import swingy.model.CreateHero.HeroStats;
+import swingy.model.CreateHero.Stats;
 import swingy.model.Weapons.Weapon;
 
 public class Level extends ShowHero{
 
     public static int showDetails(long Choice, String player, Hero hero){
-        System.out.println("Welcome to SWINGY" + player );
+        System.out.println("\nWelcome to SWINGY " + player + "\n");
         if(Choice == 1){
-            System.out.println("You're Fighter");
+            System.out.println("You're Adventurous");
+            System.out.println("\n--------------------------------------------------------------\n");
             System.out.println("Level: " + hero.getHeroStats().getLevel() + "\n");
             System.out.println("Attack: " + hero.getHeroStats().getAttack() + "\n");
             System.out.println("Defence: " + hero.getHeroStats().getDefence() + "\n");
             System.out.println("Experience: " + hero.getHeroStats().getExperience() + "\n");
             System.out.println("Hit Points: " + hero.getHeroStats().getHitPoints() + "\n");
+            System.out.println("\n--------------------------------------------------------------\n");
             gameChoice();
         }
-        else if(Choice == 1){
-            System.out.println("You're Hero");
+        else if(Choice == 2){
+            System.out.println("You're Bulky");
+            System.out.println("\n--------------------------------------------------------------\n");
             System.out.println("Level: " + hero.getHeroStats().getLevel() + "\n");
             System.out.println("Attack: " + hero.getHeroStats().getAttack() + "\n");
             System.out.println("Defence: " + hero.getHeroStats().getDefence() + "\n");
             System.out.println("Experience: " + hero.getHeroStats().getExperience() + "\n");
             System.out.println("Hit Points: " + hero.getHeroStats().getHitPoints() + "\n");
+            System.out.println("\n--------------------------------------------------------------\n");
             gameChoice();
         }
 
@@ -41,8 +45,9 @@ public class Level extends ShowHero{
             }
             else
             {
-                System.out.println("Invalid input\nPlease press Enter to Continue");
-                enterScanner.nextLine();
+                System.out.println("Invalid input\nPlease try again.");
+                // enterScanner.nextLine();
+                // showDetails();
             }
         }
         return choice;
@@ -50,7 +55,7 @@ public class Level extends ShowHero{
 
     public static void gameChoice(){
         System.out.println("What do you wanna do?\n");
-        System.out.println("1: START\n");
-        System.out.println("2: Quit");
+        System.out.println("1: START");
+        System.out.println("2: Quit\n");
     }
 }

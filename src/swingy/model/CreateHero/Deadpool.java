@@ -2,9 +2,9 @@ package swingy.model.CreateHero;
 
 import swingy.model.Weapons.Artifacts;
 
-public class IronMan extends Hero{
+public class Deadpool extends Hero{
 
-    public IronMan(String newHero, Stats stats, Artifacts artifacts){
+    public Deadpool(String newHero, Stats stats, Artifacts artifacts){
         super(newHero, stats, artifacts);
     }
 }

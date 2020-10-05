@@ -13,7 +13,7 @@ public class Console {
         String player;
         int type;
         int createHero;
-        int choice;
+        int choice = 0;
         int play;
         Hero hero;
 
@@ -26,7 +26,7 @@ public class Console {
             if(createHero == 1) {
                 player = ShowHero.Welcome();
                 type = ShowHero.showHeroSelection();
-                hero = BeginGame.NewHero(player, type);
+                hero = BeginGame.newHero(player, type);
                 play = Level.showDetails(type, player, hero);
 
                 if(play == 1){
@@ -42,7 +42,7 @@ public class Console {
                 ReadFromFile.getHeroDB();
                 while(myScanner.hasNextLine()){
                     String lineReader = myScanner.nextLine();
-                    int lineCounter = lineReader.getLineCounter();
+                    int lineCounter = ReadFromFile.getLineCounter();
 
                     if(isDigit(lineReader) == true){
                         try{

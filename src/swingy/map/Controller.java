@@ -18,28 +18,28 @@ public class Controller {
         ShowHero.crossRoad();
         Console console = System.console();
         while(true){
-            String consoleReader = console.nextLine();
+            String consoleReader = console.readLine();
 
             if(consoleReader.matches("\\s*[1-5]\\s*")){
                 int direction = Integer.parseInt(consoleReader);
 
                 if(direction == 1){
-                    showMap.updatePostion(0, -1);
+                    showMap.updatePosition(0, -1);
                     showMap.showMap();
                     ShowHero.crossRoad();
                 }
                 else if(direction == 2){
-                    showMap.updatePostion(0, 1);
+                    showMap.updatePosition(0, 1);
                     showMap.showMap();
                     ShowHero.crossRoad();
                 }
                 else if(direction == 3){
-                    showMap.updatePostion(-1, 0);
+                    showMap.updatePosition(-1, 0);
                     showMap.showMap();
                     ShowHero.crossRoad();
                 }
                 else if(direction == 4){
-                    showMap.updatePostion(1, 0);
+                    showMap.updatePosition(1, 0);
                     showMap.showMap();
                     ShowHero.crossRoad();
                 }

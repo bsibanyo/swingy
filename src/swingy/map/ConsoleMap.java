@@ -1,7 +1,9 @@
 package swingy.map;
 
 import swingy.model.Enemy.Villian;
-import swingy.model.Weapons.*;
+import swingy.model.Weapons.Weapon;
+import swingy.model.Weapons.Armor;
+import swingy.model.Weapons.Helm;
 import swingy.file.ReadFromFile;
 import swingy.model.CreateHero.Hero;
 
@@ -48,7 +50,7 @@ public class ConsoleMap {
             x = (int) (size / 2);
             y = (int) (size / 2);
         }
-        else ((size % 2) == 0){
+        else if((size % 2) == 0){
             x = (size / 2);
             y = (size / 2);
         }
@@ -121,7 +123,7 @@ public class ConsoleMap {
 
 //        INITIALIZE MAP ARRAY TO ZEROS
         for (int y = 0; y < size; y++){
-            for (int x; x < size; x++){
+            for (int x = 0; x < size; x++){
                 map[y][x] = 0;
             }
         }
@@ -143,11 +145,11 @@ public class ConsoleMap {
         }
 
         System.out.println("\n----------------------------\n");
-        System.out.println("Level: " + hero.getHeroStats().getLevel() + "|");
-        System.out.println("Attack: " + hero.getHeroStats().getAttack() + "|");
-        System.out.println("Defence: " + hero.getHeroStats().getDefence() + "|");
-        System.out.println("Hit Points: " + hero.getHeroStats().getHitPoints() + "|");
-        System.out.println("Experience: " + hero.getHeroStats().getExperience() + "\n\n");
+        System.out.println("Level: " + hero.getHeroStats().getLevel() + "| " +
+                "Attack: " + hero.getHeroStats().getAttack() + "| " +
+                "Defence: " + hero.getHeroStats().getDefence() + "| " +
+                "Hit Points: " + hero.getHeroStats().getHitPoints() + "| " +
+                "Experience: " + hero.getHeroStats().getExperience() + "\n\n");
 
         for (int y = 0; y < mapY; y++){
             for(int x = 0; x < mapX; x++){
@@ -193,7 +195,7 @@ public class ConsoleMap {
                 ePosX = random.nextInt(size);
                 ePosY = random.nextInt(size);
             }
-            villian = Players.newEnemy(hero);
+            villian = Player.newEnemy(hero);
             villian.setVPosition(ePosX, ePosY);
             registerEnemy(villian);
         }
@@ -352,8 +354,8 @@ public class ConsoleMap {
         upgradeXP(2);
 
         if(Controller.dropChance() == true){
-            System.out.println("You killed the enemy, and he dropped down an artifact.\n")
-            System.out.println("You can pickup enemy artifact (\" + crossed.getArtifacts().getType() + \n")");
+            System.out.println("You killed the enemy, and he dropped down an artifact.\n");
+            System.out.println("You can pickup enemy artifact (\" + crossed.getArtifacts().getType() + \n");
             System.out.println("1: Pick it up");
             System.out.println("2: Continue with the Adventure");
 
