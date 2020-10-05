@@ -144,27 +144,27 @@ public class ConsoleMap {
             }
         }
 
-        System.out.println("\n----------------------------\n");
+        System.out.println("\n----------------------------");
         System.out.println("Level: " + hero.getHeroStats().getLevel() + "| " +
                 "Attack: " + hero.getHeroStats().getAttack() + "| " +
                 "Defence: " + hero.getHeroStats().getDefence() + "| " +
                 "Hit Points: " + hero.getHeroStats().getHitPoints() + "| " +
-                "Experience: " + hero.getHeroStats().getExperience() + "\n");
+                "Experience: " + hero.getHeroStats().getExperience() + "|\n");
 
         for (int y = 0; y < mapY; y++){
             for(int x = 0; x < mapX; x++){
                 switch(map[y][x]){
                     case 0:
-                        System.out.println("|    |");
+                        System.out.print("|      |");
                         break;
                     case 1:
-                        System.out.println("|  m  |");
+                        System.out.print("|  🍑  |");
                         break;
                     case 2:
-                        System.out.println("|  s  |");
+                        System.out.print("|  🍑  |");
                         break;
                     default:
-                        System.out.println("|  H  |");
+                        System.out.print("|  🍆  |");
                         break;
                 }
             }

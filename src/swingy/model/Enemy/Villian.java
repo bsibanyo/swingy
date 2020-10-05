@@ -3,8 +3,8 @@ package swingy.model.Enemy;
 import swingy.model.Weapons.Artifacts;
 
 public class Villian {
-    private int x;
-    private int y;
+    private int xCoordinates;
+    private int yCoordinates;
     private int level, attack, defence, hitPoints, experience, power;
     private long id;
     private long idCounter = 1;
@@ -35,11 +35,11 @@ public class Villian {
 
 //    GETTERS
     public int getVertX(){
-        return this.x;
+        return this.xCoordinates;
     }
 
     public int getVertY(){
-        return this.y;
+        return this.yCoordinates;
     }
 
     public int getTypeId(){
@@ -80,8 +80,8 @@ public class Villian {
     }
 
     public void setVPosition(int x, int y){
-        this.x = x;
-        this.y = y;
+        this.xCoordinates = x;
+        this.yCoordinates = y;
     }
 
 }

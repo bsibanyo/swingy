@@ -95,10 +95,10 @@ public class ShowHero
     {
         System.out.println("\n-------------------------------------------------\n");
         System.out.println("You are at the crossroad.\n Choose a direction to move.\n");
-        System.out.println("1: Go north");
-        System.out.println("2: Go east");
-        System.out.println("3: Go south");
-        System.out.println("4: Go west");
+        System.out.println("1: North");
+        System.out.println("2: South");
+        System.out.println("3: East");
+        System.out.println("4: West");
         System.out.println("\n-------------------------------------------------\n");
     }
 }
