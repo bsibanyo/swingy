@@ -49,7 +49,18 @@ public class Controller {
             }
             else
             {
-                System.out.println("Invalid Input");
+                System.out.println("\nInvalid input");
+                System.out.println("You are not a hacker\n");
+                System.out.println("LET'S TRY THIS AGAIN............\n");
+
+                System.out.println("\n-------------------------------------------------\n");
+                System.out.println("You are at the crossroad.\n Choose a direction to move.\n");
+                System.out.println("1: North");
+                System.out.println("2: South");
+                System.out.println("3: East");
+                System.out.println("4: West\n");
+                System.out.println("5: QUIT");
+                System.out.println("\n-------------------------------------------------\n");
             }
         }
     }
@@ -83,7 +94,7 @@ public class Controller {
                     if (enemy.getHitPoints() > 0) {
                         hero.getHeroStats().setHitPoints(-hit);
                         ReadFromFile.updateFile(hero);
-                        System.out.println("The Enemy attacked you and you were to damaged to continue " + hit + " hitpoints.");
+                        System.out.println("The Enemy attacked " + hit + " hits.");
 
                         if (hero.getHeroStats().getHitPoints() <= 0) {
                             won = 0;
@@ -107,7 +118,7 @@ public class Controller {
             }
         }
         else
-            System.out.println("You are too weak to fight, go regain your strength!!!\n\n" +
+            System.out.println("You are too weak to fight, go and REST!!!\n\n" +
                     "Your HP is " + hero.getHeroStats().getHitPoints());
         return won;
     }

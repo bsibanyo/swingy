@@ -58,7 +58,7 @@ public class ShowHero
             {
                 System.out.println("\nInvalid input");
                 System.out.println("You are not a hacker\n");
-                System.out.println("Let's try this again..........\n");
+                System.out.println("LET'S TRY THIS AGAIN............\n");
 
                 System.out.println("SWINGY" + ", Your adventure awaits!\n");
                 System.out.println("1: Create a new Hero");
@@ -94,7 +94,7 @@ public class ShowHero
             {
                 System.out.println("\nInvalid input");
                 System.out.println("You are not a hacker\n");
-                System.out.println("Let's try this again..........\n");
+                System.out.println("LET'S TRY THIS AGAIN............\n");
                 
                 System.out.println("                  Select your AVATOR!\n");
                 System.out.println("1: Deadpool");
@@ -111,7 +111,8 @@ public class ShowHero
         System.out.println("1: North");
         System.out.println("2: South");
         System.out.println("3: East");
-        System.out.println("4: West");
+        System.out.println("4: West\n");
+        System.out.println("5: QUIT");
         System.out.println("\n-------------------------------------------------\n");
     }
 }

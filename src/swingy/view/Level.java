@@ -47,7 +47,7 @@ public class Level extends ShowHero{
             {
                 System.out.println("\nInvalid input");
                 System.out.println("You are not a hacker\n");
-                System.out.println("Let's try this again..........\n");
+                System.out.println("LET'S TRY THIS AGAIN............\n");
                 
                 System.out.println("What do you wanna do?\n");
                 System.out.println("1: START");

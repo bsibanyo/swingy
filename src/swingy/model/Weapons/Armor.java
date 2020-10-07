@@ -1,7 +1,7 @@
 package swingy.model.Weapons;
 
 public class Armor extends Artifacts{
-    private int defence = 77;
+    private int defence = 100;
 
     public Armor(String type){
         super(type);

@@ -288,7 +288,7 @@ public class ConsoleMap {
                     {
                         System.out.println("\nInvalid input");
                         System.out.println("You are not a hacker\n");
-                        System.out.println("Let's try this again..........\n");
+                        System.out.println("LET'S TRY THIS AGAIN............\n");
 
                         System.out.println("You're exploring the Map!\n");
                         System.out.println("1: Continue\n");
@@ -304,7 +304,7 @@ public class ConsoleMap {
 
     public boolean  crossedEnemy(int heroX, int heroY, int enemyX, int enemyY){
         if((heroX == enemyX) && (heroY == enemyY)){
-            System.out.println("You came to an Enemy\n");
+            System.out.println("You encountered an Enemy\n");
             System.out.println("What do you wanna do?\n");
             System.out.println("--------------------------------\n");
             System.out.println("1: Run");
@@ -323,9 +323,9 @@ public class ConsoleMap {
                             System.out.println("Enemy: For that I took 10 XP\n");
                             System.out.println("--------------------------------");
                             System.out.println("Your current XP: " + (hero.getHeroStats().getExperience() - 10) + "\n");
-                            
                             showMap();
-                    }
+                            // updatePosition();
+                        }
                     else if(choice == 2){
                         Villian crossed = getCrossedEnemy();
                         int won = Controller.fight(hero, crossed);
@@ -344,7 +344,7 @@ public class ConsoleMap {
                     {
                         System.out.println("\nInvalid input");
                         System.out.println("You are not a hacker\n");
-                        System.out.println("Let's try this again..........\n");
+                        System.out.println("LET'S TRY THIS AGAIN............\n");
 
                         System.out.println("What do you wanna do?\n");
                         System.out.println("--------------------------------\n");
@@ -356,7 +356,7 @@ public class ConsoleMap {
                 {
                     System.out.println("\nInvalid input");
                     System.out.println("You are not a hacker\n");
-                    System.out.println("Let's try this again..........\n");
+                    System.out.println("LET'S TRY THIS AGAIN............\n");
 
                     System.out.println("What do you wanna do?\n");
                     System.out.println("--------------------------------\n");
@@ -419,7 +419,7 @@ public class ConsoleMap {
                 else {
                         System.out.println("\nInvalid input");
                         System.out.println("You are not a hacker\n");
-                        System.out.println("Let's try this again..........\n");
+                        System.out.println("LET'S TRY THIS AGAIN............\n");
 
                         System.out.println("You killed the enemy, and he dropped down an artifact.\n");
                         System.out.println("You can pickup enemy artifact (\" + crossed.getArtifacts().getType() + \n");
@@ -430,8 +430,9 @@ public class ConsoleMap {
         }
         else{
             upgradeXP(2);
+            System.out.println("<<<<<<<<GREAT.>>>>>>>>>>>>>");
             System.out.println("Battle Won.");
-            System.out.println("500 XP");
+            System.out.println("550 XP EARNED!!!");
 
             try{
                 Thread.sleep(1000);
