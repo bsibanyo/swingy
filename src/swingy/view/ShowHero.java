@@ -23,8 +23,11 @@ public class ShowHero
                 }
                 else
                 {
-                    System.out.println("Invalid input\nPlease press Enter to Continue");
-                    enterScanner.nextLine();
+                    System.out.println("\nInvalid input");
+                    System.out.println("You are not a hacker\n");
+                    // System.out.println("Please press Enter to continue...");
+                    // enterScanner.nextLine();
+                    // Welcome();
                 }
             }
         }
@@ -33,9 +36,7 @@ public class ShowHero
 
     public static int playerSetUp(){
 //        System.out.println("Hello " + playerName + ", let's start your adventure!");
-        System.out.println("SWINGY" + ", let's start your adventure!");
-
-        System.out.println("");
+        System.out.println("SWINGY" + ", Your adventure awaits!");
         System.out.println("\n-------------------------------------------------\n");
         System.out.println("");
         System.out.println("1: Create a new Hero");
@@ -55,8 +56,15 @@ public class ShowHero
             }
             else
             {
-                System.out.println("Invalid input\n");
+                System.out.println("\nInvalid input");
+                System.out.println("You are not a hacker\n");
+                System.out.println("Let's try this again..........\n");
+
+                System.out.println("SWINGY" + ", Your adventure awaits!\n");
+                System.out.println("1: Create a new Hero");
+                System.out.println("2: Select an existing Hero");
                 // enterScanner.nextLine();
+                // playerSetUp();
             }
         }
         return choice;
@@ -84,8 +92,13 @@ public class ShowHero
             }
             else
             {
-                System.out.println("Invalid input\n");
-                // enterScanner.nextLine();
+                System.out.println("\nInvalid input");
+                System.out.println("You are not a hacker\n");
+                System.out.println("Let's try this again..........\n");
+                
+                System.out.println("                  Select your AVATOR!\n");
+                System.out.println("1: Deadpool");
+                System.out.println("2: Hulk");
             }
         }
         return choice;

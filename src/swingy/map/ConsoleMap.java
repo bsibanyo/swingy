@@ -7,6 +7,8 @@ import swingy.model.Weapons.Helm;
 import swingy.file.ReadFromFile;
 import swingy.model.CreateHero.Hero;
 
+import swingy.map.ConsoleMap;
+
 import java.util.*;
 
 public class ConsoleMap {
@@ -148,7 +150,7 @@ public class ConsoleMap {
         System.out.println("Level: " + hero.getHeroStats().getLevel() + "| " +
                 "Attack: " + hero.getHeroStats().getAttack() + "| " +
                 "Defence: " + hero.getHeroStats().getDefence() + "| " +
-                "Hit Points: " + hero.getHeroStats().getHitPoints() + "| " +
+                "HP: " + hero.getHeroStats().getHitPoints() + "| " +
                 "Experience: " + hero.getHeroStats().getExperience() + "|\n");
 
         for (int y = 0; y < mapY; y++){
@@ -213,23 +215,23 @@ public class ConsoleMap {
     public void upgradeXP(int type){
         if(type == 1){
             int xp;
-            if(hero.getHeroStats().getExperience() < 2450){
-                xp = 2450;
+            if(hero.getHeroStats().getExperience() < 1000){
+                xp = 1000;
                 hero.getHeroStats().setExperience(xp);
             }
-            else if(hero.getHeroStats().getExperience() < 4800){
-                xp = 4800;
+            else if(hero.getHeroStats().getExperience() < 2000){
+                xp = 2000;
                 hero.getHeroStats().setExperience(xp);
             }
-            else if(hero.getHeroStats().getExperience() < 8050){
-                xp = 8050;
+            else if(hero.getHeroStats().getExperience() < 3000){
+                xp = 3000;
                 hero.getHeroStats().setExperience(xp);
             }
-            else if(hero.getHeroStats().getExperience() < 12200){
-                xp = 12200;
+            else if(hero.getHeroStats().getExperience() < 4000){
+                xp = 4000;
                 hero.getHeroStats().setExperience(xp);
             }
-            else if(hero.getHeroStats().getExperience() < 12201){
+            else if(hero.getHeroStats().getExperience() < 5000){
                 System.out.println("UNTIL NEXT TIME");
                 System.exit(0);
             }
@@ -244,18 +246,18 @@ public class ConsoleMap {
 
     public void hasWon(){
 
-        if(hero.getHeroStats().getExperience() > 1000 && hero.getHeroStats().getExperience() < 2450){
+        if(hero.getHeroStats().getExperience() > 1000 && hero.getHeroStats().getExperience() < 1000){
             this.level = 1;
         }
-        else if (hero.getHeroStats().getExperience() >= 2450 && hero.getHeroStats().getExperience() < 4800) {
+        else if (hero.getHeroStats().getExperience() >= 1000 && hero.getHeroStats().getExperience() < 2000) {
             this.level = 2;
         }
-        else if (hero.getHeroStats().getExperience() >= 4800 && hero.getHeroStats().getExperience() < 8050) {
+        else if (hero.getHeroStats().getExperience() >= 2000 && hero.getHeroStats().getExperience() < 3000) {
             this.level = 3;
         }
-        else if (hero.getHeroStats().getExperience() >= 8050 && hero.getHeroStats().getExperience() < 12200) {
+        else if (hero.getHeroStats().getExperience() >= 3000 && hero.getHeroStats().getExperience() < 4000) {
             this.level = 4;
-        } else if (hero.getHeroStats().getExperience() == 12200) {
+        } else if (hero.getHeroStats().getExperience() == 5000) {
             this.level = 5;
         }
 
@@ -263,8 +265,8 @@ public class ConsoleMap {
             hero.getHeroStats().setLevel(this.level);
             ReadFromFile.updateFile(hero);
 
-            System.out.println("You defeated the Enemy");
-            System.out.println("1: Continue\n");
+            System.out.println("You're exploring the Map!\n");
+            System.out.println("1: Continue");
             System.out.println("2: Quit");
 
             Scanner myScanner = new Scanner(System.in);
@@ -284,7 +286,13 @@ public class ConsoleMap {
                     }
                     else
                     {
-                        System.out.println("Invalid Input");
+                        System.out.println("\nInvalid input");
+                        System.out.println("You are not a hacker\n");
+                        System.out.println("Let's try this again..........\n");
+
+                        System.out.println("You're exploring the Map!\n");
+                        System.out.println("1: Continue\n");
+                        System.out.println("2: Quit");
                     }
                 }
             }
@@ -296,10 +304,11 @@ public class ConsoleMap {
 
     public boolean  crossedEnemy(int heroX, int heroY, int enemyX, int enemyY){
         if((heroX == enemyX) && (heroY == enemyY)){
-            System.out.println("You came to an Enemy");
-            System.out.println("What do you wish to do?");
-            System.out.println("1: Run\n");
-            System.out.println("2: Fight\n");
+            System.out.println("You came to an Enemy\n");
+            System.out.println("What do you wanna do?\n");
+            System.out.println("--------------------------------\n");
+            System.out.println("1: Run");
+            System.out.println("2: Fight");
 
             Scanner myScanner = new Scanner(System.in);
             while(myScanner.hasNextLine()){
@@ -309,15 +318,13 @@ public class ConsoleMap {
                     int choice = Integer.parseInt(readLine);
 
                     if(choice == 1){
-                        Random random = new Random();
-                        int run = random.nextInt(2) + 1;
 
-                        if(run == 1){
-                            System.out.println("Enemy: You are a coward!!!\n");
-                            System.out.println("Enemy: For that you lost 5 XP\n");
-                            System.out.println("Your current XP: " + (hero.getHeroStats().getExperience() - 5));
+                            System.out.println("Enemy: You are a coward!!!");
+                            System.out.println("Enemy: For that I took 10 XP\n");
+                            System.out.println("--------------------------------");
+                            System.out.println("Your current XP: " + (hero.getHeroStats().getExperience() - 10) + "\n");
+                            
                             showMap();
-                        }
                     }
                     else if(choice == 2){
                         Villian crossed = getCrossedEnemy();
@@ -329,20 +336,32 @@ public class ConsoleMap {
                         }
                         else
                         {
-                            lost();
+                            dead();
                             break;
                         }
                     }
                     else
                     {
-                        System.out.println("Invalid Input");
-                        System.out.println("You are not a hacker");
+                        System.out.println("\nInvalid input");
+                        System.out.println("You are not a hacker\n");
+                        System.out.println("Let's try this again..........\n");
+
+                        System.out.println("What do you wanna do?\n");
+                        System.out.println("--------------------------------\n");
+                        System.out.println("1: Run");
+                        System.out.println("2: Fight");
                     }
                 }
                 else
                 {
-                    System.out.println("Invalid Input!");
-                    System.out.println("You are not a hacker");
+                    System.out.println("\nInvalid input");
+                    System.out.println("You are not a hacker\n");
+                    System.out.println("Let's try this again..........\n");
+
+                    System.out.println("What do you wanna do?\n");
+                    System.out.println("--------------------------------\n");
+                    System.out.println("1: Run");
+                    System.out.println("2: Fight");
                 }
             }
         }
@@ -398,8 +417,14 @@ public class ConsoleMap {
                     }
                 }
                 else {
-                    System.out.println("Invalid Input!");
-                    System.out.println("You are not a hacker");
+                        System.out.println("\nInvalid input");
+                        System.out.println("You are not a hacker\n");
+                        System.out.println("Let's try this again..........\n");
+
+                        System.out.println("You killed the enemy, and he dropped down an artifact.\n");
+                        System.out.println("You can pickup enemy artifact (\" + crossed.getArtifacts().getType() + \n");
+                        System.out.println("1: Pick it up");
+                        System.out.println("2: Continue with the Adventure");
                 }
             }
         }
@@ -418,8 +443,8 @@ public class ConsoleMap {
         }
     }
 
-    public void lost(){
-            System.out.println("You Lost .");
+    public void dead(){
+            System.out.println("You're DEAD......");
             System.out.println("GAME OVER");
             System.exit(0);
     }

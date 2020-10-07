@@ -30,7 +30,7 @@ public class BeginGame {
             attack = 100 + weapon.getAttack();
             defence = 100;
             hitPoints = 100;
-            experience = 1000;
+            experience = 100;
             Stats stats = new Stats(type, level, attack, defence, hitPoints, experience);
             newHero = Player.newPlayer(type, player, stats, weapon);
             displayStats = type + " " + player + " " + level + " " + attack + " " + defence + " " + hitPoints + " " + experience + " " + artifacts;
@@ -41,7 +41,7 @@ public class BeginGame {
             attack = 100;
             defence = 100 + armor.getDefence();
             hitPoints = 100;
-            experience = 1000;
+            experience = 100;
             Stats stats = new Stats(type, level, attack, defence, hitPoints, experience);
             newHero = Player.newPlayer(type, player, stats, armor);
             displayStats = type + " " + player + " " + level + " " + attack + " " + defence + " " + hitPoints + " " + experience + " " + artifacts;
@@ -52,7 +52,7 @@ public class BeginGame {
             attack = 100 + helm.getHitPoints();
             defence = 100;
             hitPoints = 100;
-            experience = 1000;
+            experience = 100;
             Stats stats = new Stats(type, level, attack, defence, hitPoints, experience);
             newHero = Player.newPlayer(type, player, stats, helm);
             displayStats = type + " " + player + " " + level + " " + attack + " " + defence + " " + hitPoints + " " + experience + " " + artifacts;

@@ -55,7 +55,7 @@ public class Console {
                         }
                         catch(Exception e){
                             System.out.println("Invalid input\n");
-                            // enterScanner.nextLine();
+                            // enterScanner.nextLine("Please press Enter to continue...");
                         }
                     }
                     else

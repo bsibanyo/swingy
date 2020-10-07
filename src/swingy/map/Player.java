@@ -4,7 +4,7 @@ import swingy.model.CreateHero.Deadpool;
 import swingy.model.CreateHero.Hulk;
 import swingy.model.CreateHero.Hero;
 import swingy.model.CreateHero.Stats;
-import swingy.model.Enemy.Monster;
+import swingy.model.Enemy.Goblin;
 import swingy.model.Weapons.Artifacts;
 import swingy.model.Weapons.Armor;
 import swingy.model.Weapons.Helm;
@@ -25,7 +25,7 @@ public class Player {
         }
     }
 
-    public static Monster newEnemy(Hero hero){
+    public static Goblin newEnemy(Hero hero){
         Random random = new Random();
         int villian = random.nextInt(2) + 1;
         String artifacts = Artifacts.randomArtifacts();
@@ -44,7 +44,7 @@ public class Player {
                 defence = 100;
                 hitPoints = 100;
                 experience = 0;
-                return new Monster(level, attack, defence, hitPoints, experience, weapon);
+                return new Goblin(level, attack, defence, hitPoints, experience, weapon);
             }
             else if(artifacts.equals("ARMOR")){
                 Armor armor = new Armor("Armor");
@@ -53,7 +53,7 @@ public class Player {
                 defence = 100 + armor.getDefence();
                 hitPoints = 100;
                 experience = 0;
-                return new Monster(level, attack, defence, hitPoints, experience, armor);
+                return new Goblin(level, attack, defence, hitPoints, experience, armor);
             }
             else if(artifacts.equals("HELM")){
                 Helm helm = new Helm("Helm");
@@ -62,7 +62,7 @@ public class Player {
                 defence = 100;
                 hitPoints = 100;
                 experience = 0;
-                return new Monster(level, attack, defence, hitPoints, experience, helm);
+                return new Goblin(level, attack, defence, hitPoints, experience, helm);
             }
         }
         else if (villian == 2){
@@ -73,7 +73,7 @@ public class Player {
                 defence = 100;
                 hitPoints = 100;
                 experience = 0;
-                return new Monster(level, attack, defence, hitPoints, experience, weapon);
+                return new Goblin(level, attack, defence, hitPoints, experience, weapon);
             }
             else if (artifacts.equals("ARMOR")){
                 Armor armor = new Armor("Armor");
@@ -82,7 +82,7 @@ public class Player {
                 defence = 100 + armor.getDefence();
                 hitPoints = 100;
                 experience = 0;
-                return new Monster(level, attack, defence, hitPoints, experience, armor);
+                return new Goblin(level, attack, defence, hitPoints, experience, armor);
             }
             else if (artifacts.equals("HELM")){
                 Helm helm = new Helm("Helm");
@@ -91,7 +91,7 @@ public class Player {
                 defence = 100;
                 hitPoints = 100;
                 experience = 0;
-                return new Monster(level, attack, defence, hitPoints, experience, helm);
+                return new Goblin(level, attack, defence, hitPoints, experience, helm);
             }
         }
         return null;

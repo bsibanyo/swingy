@@ -10,7 +10,7 @@ public class Villian {
     private long idCounter = 1;
     private int typeId;
     private Artifacts artifacts;
-    private static final String enemies[] = {"GHOST", "MONSTER"};
+    private static final String enemies[] = {"GHOST", "GOBLIN"};
 
     public Villian(){
 

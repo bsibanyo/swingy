@@ -8,7 +8,7 @@ import swingy.model.Weapons.Weapon;
 public class Level extends ShowHero{
 
     public static int showDetails(long Choice, String player, Hero hero){
-        System.out.println("\nWelcome to SWINGY " + player + "\n");
+        System.out.println("\nWelcome to SWINGY " + (player) + "\n");
         if(Choice == 1){
             System.out.println("Character: Adventurous");
             System.out.println("\n--------------------------------------------------------------\n");
@@ -16,7 +16,7 @@ public class Level extends ShowHero{
             System.out.println("Attack: " + hero.getHeroStats().getAttack() + "\n");
             System.out.println("Defence: " + hero.getHeroStats().getDefence() + "\n");
             System.out.println("Experience: " + hero.getHeroStats().getExperience() + "\n");
-            System.out.println("Hit Points: " + hero.getHeroStats().getHitPoints() + "\n");
+            System.out.println("HP: " + hero.getHeroStats().getHitPoints() + "\n");
             System.out.println("\n--------------------------------------------------------------\n");
             gameChoice();
         }
@@ -27,7 +27,7 @@ public class Level extends ShowHero{
             System.out.println("Attack: " + hero.getHeroStats().getAttack() + "\n");
             System.out.println("Defence: " + hero.getHeroStats().getDefence() + "\n");
             System.out.println("Experience: " + hero.getHeroStats().getExperience() + "\n");
-            System.out.println("Hit Points: " + hero.getHeroStats().getHitPoints() + "\n");
+            System.out.println("HP: " + hero.getHeroStats().getHitPoints() + "\n");
             System.out.println("\n--------------------------------------------------------------\n");
             gameChoice();
         }
@@ -45,7 +45,13 @@ public class Level extends ShowHero{
             }
             else
             {
-                System.out.println("Invalid input\nPlease try again.");
+                System.out.println("\nInvalid input");
+                System.out.println("You are not a hacker\n");
+                System.out.println("Let's try this again..........\n");
+                
+                System.out.println("What do you wanna do?\n");
+                System.out.println("1: START");
+                System.out.println("2: Quit\n");
                 // enterScanner.nextLine();
                 // showDetails();
             }
