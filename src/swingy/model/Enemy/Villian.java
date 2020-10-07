@@ -4,7 +4,7 @@ import swingy.model.Weapons.Artifacts;
 
 public class Villian {
     private int xCoordinates;
-    private int yCoordinates;
+    private int yCoordinatesinates;
     private int level, attack, defence, hitPoints, experience, power;
     private long id;
     private long idCounter = 1;
@@ -39,7 +39,7 @@ public class Villian {
     }
 
     public int getVertY(){
-        return this.yCoordinates;
+        return this.yCoordinatesinates;
     }
 
     public int getTypeId(){
@@ -81,7 +81,7 @@ public class Villian {
 
     public void setVPosition(int x, int y){
         this.xCoordinates = x;
-        this.yCoordinates = y;
+        this.yCoordinatesinates = y;
     }
 
 }

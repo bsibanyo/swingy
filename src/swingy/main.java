@@ -17,7 +17,8 @@ public class main {
             }
             else
             {
-
+                Gui gui = new Gui();
+                gui.guiWelcomeScreen();
             }
         }
         finally {

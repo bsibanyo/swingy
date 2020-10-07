@@ -22,7 +22,7 @@ public class ConsoleMap {
     private static Hero hero;
     private static int enemies;
     private int xCoordinates;
-    private int yCoordinates;
+    private int yCoordinatesinates;
     private int level;
     private Villian villian = new Villian();
     private boolean set = false;
@@ -57,13 +57,13 @@ public class ConsoleMap {
             y = (size / 2);
         }
         this.xCoordinates = x;
-        this.yCoordinates = y;
+        this.yCoordinatesinates = y;
     }
 
     public void updatePosition(int xPos, int yPos){
 
         int previousX = this.xCoordinates;
-        int previousY = this.yCoordinates;
+        int previousY = this.yCoordinatesinates;
 
         this.xCoordinates += xPos;
         if(this.xCoordinates < 0){
@@ -85,16 +85,16 @@ public class ConsoleMap {
             showMap();
         }
 
-        this.yCoordinates += yPos;
-        if(this.yCoordinates < 0){
-            this.yCoordinates = (int) (size / 2);
+        this.yCoordinatesinates += yPos;
+        if(this.yCoordinatesinates < 0){
+            this.yCoordinatesinates = (int) (size / 2);
             upgradeXP(1);
             hasWon();
             set = false;
             showMap();
         }
         else if(this.xCoordinates >= this.size){
-            this.yCoordinates = (int) (size / 2);
+            this.yCoordinatesinates = (int) (size / 2);
             upgradeXP(1);
             hasWon();
             set = false;
@@ -136,11 +136,11 @@ public class ConsoleMap {
         }
 
 //        INITIALIZE OF HERO
-        map[this.yCoordinates][this.xCoordinates] = 4;
+        map[this.yCoordinatesinates][this.xCoordinates] = 4;
 
 //        CHECK IF HERO HAS CROSS PATH WITH THE ENEMY
         for(Villian villian : enemyArray){
-            boolean meetEnemy = crossedEnemy(this.yCoordinates, this.xCoordinates, villian.getVertY(), villian.getVertX());
+            boolean meetEnemy = crossedEnemy(this.yCoordinatesinates, this.xCoordinates, villian.getVertY(), villian.getVertX());
             if(meetEnemy == true){
                 break;
             }
@@ -193,7 +193,7 @@ public class ConsoleMap {
             int ePosX = random.nextInt(size);
             int ePosY = random.nextInt(size);
 
-            while(ePosY == this.yCoordinates || ePosX == this.xCoordinates){
+            while(ePosY == this.yCoordinatesinates || ePosX == this.xCoordinates){
                 ePosX = random.nextInt(size);
                 ePosY = random.nextInt(size);
             }
@@ -205,7 +205,7 @@ public class ConsoleMap {
 
     public Villian getCrossedEnemy(){
         for(int i = 0; i < enemyArray.size(); i++){
-            if(enemyArray.get(i).getVertY() == this.yCoordinates && enemyArray.get(i).getVertX() == this.xCoordinates){
+            if(enemyArray.get(i).getVertY() == this.yCoordinatesinates && enemyArray.get(i).getVertX() == this.xCoordinates){
                 return enemyArray.get(i);
             }
         }
