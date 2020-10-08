@@ -22,7 +22,7 @@ public class ConsoleMap {
     private static Hero hero;
     private static int enemies;
     private int xCoordinates;
-    private int yCoordinatesinates;
+    private int yCoordinates;
     private int level;
     private Villian villian = new Villian();
     private boolean set = false;
@@ -57,13 +57,13 @@ public class ConsoleMap {
             y = (size / 2);
         }
         this.xCoordinates = x;
-        this.yCoordinatesinates = y;
+        this.yCoordinates = y;
     }
 
     public void updatePosition(int xPos, int yPos){
 
         int previousX = this.xCoordinates;
-        int previousY = this.yCoordinatesinates;
+        int previousY = this.yCoordinates;
 
         this.xCoordinates += xPos;
         if(this.xCoordinates < 0){
@@ -85,16 +85,16 @@ public class ConsoleMap {
             showMap();
         }
 
-        this.yCoordinatesinates += yPos;
-        if(this.yCoordinatesinates < 0){
-            this.yCoordinatesinates = (int) (size / 2);
+        this.yCoordinates += yPos;
+        if(this.yCoordinates < 0){
+            this.yCoordinates = (int) (size / 2);
             upgradeXP(1);
             hasWon();
             set = false;
             showMap();
         }
         else if(this.xCoordinates >= this.size){
-            this.yCoordinatesinates = (int) (size / 2);
+            this.yCoordinates = (int) (size / 2);
             upgradeXP(1);
             hasWon();
             set = false;
@@ -136,11 +136,11 @@ public class ConsoleMap {
         }
 
 //        INITIALIZE OF HERO
-        map[this.yCoordinatesinates][this.xCoordinates] = 4;
+        map[this.yCoordinates][this.xCoordinates] = 4;
 
 //        CHECK IF HERO HAS CROSS PATH WITH THE ENEMY
         for(Villian villian : enemyArray){
-            boolean meetEnemy = crossedEnemy(this.yCoordinatesinates, this.xCoordinates, villian.getVertY(), villian.getVertX());
+            boolean meetEnemy = crossedEnemy(this.yCoordinates, this.xCoordinates, villian.getVertY(), villian.getVertX());
             if(meetEnemy == true){
                 break;
             }
@@ -193,7 +193,7 @@ public class ConsoleMap {
             int ePosX = random.nextInt(size);
             int ePosY = random.nextInt(size);
 
-            while(ePosY == this.yCoordinatesinates || ePosX == this.xCoordinates){
+            while(ePosY == this.yCoordinates || ePosX == this.xCoordinates){
                 ePosX = random.nextInt(size);
                 ePosY = random.nextInt(size);
             }
@@ -205,7 +205,7 @@ public class ConsoleMap {
 
     public Villian getCrossedEnemy(){
         for(int i = 0; i < enemyArray.size(); i++){
-            if(enemyArray.get(i).getVertY() == this.yCoordinatesinates && enemyArray.get(i).getVertX() == this.xCoordinates){
+            if(enemyArray.get(i).getVertY() == this.yCoordinates && enemyArray.get(i).getVertX() == this.xCoordinates){
                 return enemyArray.get(i);
             }
         }
@@ -246,16 +246,16 @@ public class ConsoleMap {
 
     public void hasWon(){
 
-        if(hero.getHeroStats().getExperience() > 1000 && hero.getHeroStats().getExperience() < 1000){
+        if(hero.getHeroStats().getExperience() > 1000 && hero.getHeroStats().getExperience() < 2000){
             this.level = 1;
         }
-        else if (hero.getHeroStats().getExperience() >= 1000 && hero.getHeroStats().getExperience() < 2000) {
+        else if (hero.getHeroStats().getExperience() >= 2000 && hero.getHeroStats().getExperience() < 3000) {
             this.level = 2;
         }
-        else if (hero.getHeroStats().getExperience() >= 2000 && hero.getHeroStats().getExperience() < 3000) {
+        else if (hero.getHeroStats().getExperience() >= 3000 && hero.getHeroStats().getExperience() < 4000) {
             this.level = 3;
         }
-        else if (hero.getHeroStats().getExperience() >= 3000 && hero.getHeroStats().getExperience() < 4000) {
+        else if (hero.getHeroStats().getExperience() >= 4000 && hero.getHeroStats().getExperience() < 5000) {
             this.level = 4;
         } else if (hero.getHeroStats().getExperience() == 5000) {
             this.level = 5;
