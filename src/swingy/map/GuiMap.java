@@ -179,7 +179,7 @@ public class GuiMap extends JFrame {
             for (int x = 0; x < xCoordinates; x++) {
                 switch (map[y][x]) {
                     case 0:
-                        textArea.append("|      | t ");
+                        textArea.append("|      |");
                         break;
                     case 1:
                         textArea.append("|  E  |");
