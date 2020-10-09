@@ -9,6 +9,8 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
+import java.awt.Color;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,9 +18,9 @@ public class Gui extends JFrame {
 
     private String heroData;
     private String player;
+    private int type;
     private String artifacts;
     private String[] confirm = null;
-    private int type;
     private static final long serialVersionUID = 42L;
     private final JFrame welcomeFrame = new JFrame("Player CREATION");
     private final JFrame playerFrame = new JFrame("SWINGY...\nThe Heroes playground");
@@ -34,7 +36,7 @@ public class Gui extends JFrame {
     private JLabel label, label1;
     private JTextField playerName;
     private JTextArea textArea;
-    private JButton welcomeBtn, createPlayer, selectPlayer;
+    private JButton welcomeButton, createPlayer, selectPlayer;
     private Hero hero = new Hero();
     private GuiMap map;
 
@@ -52,21 +54,21 @@ public class Gui extends JFrame {
         playerName = new JTextField();
         playerName.setBounds(200, 280, 200, 30);
         playerName.setCaretColor(Color.CYAN);
-        welcomeBtn = new JButton("BEGIN");
-        welcomeBtn.setBounds(200, 320, 200, 30);
-        welcomeBtn.setBackground(Color.red);
+        welcomeButton = new JButton("BEGIN");
+        welcomeButton.setBounds(200, 320, 200, 30);
+        welcomeButton.setBackground(Color.red);
         welcomeFrame.add(label);
-        welcomeFrame.setBackground(Color.yellow);
+        welcomeFrame.getContentPane().setBackground(Color.red);
         welcomeFrame.add(label1);
         welcomeFrame.add(playerName);
-        welcomeFrame.add(welcomeBtn);
+        welcomeFrame.add(welcomeButton);
         welcomeFrame.setSize(600,600);
         welcomeFrame.setLocationRelativeTo(null);
         welcomeFrame.setLayout(null);
         welcomeFrame.setVisible(true);
         welcomeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        welcomeBtn.addActionListener(new ActionListener(){
+        welcomeButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 player = playerName.getText();
@@ -104,6 +106,7 @@ public class Gui extends JFrame {
         playerFrame.add(selectPlayer);
         playerFrame.setSize(600,600);
         playerFrame.setLocationRelativeTo(null);
+        playerFrame.getContentPane().setBackground(Color.blue);
         playerFrame.setLayout(null);
         playerFrame.setVisible(true);
         playerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
