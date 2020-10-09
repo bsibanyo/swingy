@@ -159,8 +159,8 @@ public class GuiMap extends JFrame {
 //  COLLIED WITH ENEMY
 
         for (Villian enemy : enemyArray) {
-            boolean t = crossedEnemy(this.yPos, this.xPos, enemy.getVertY(), enemy.getVertX());
-            if (t == true) {
+            boolean Enemy = crossedEnemy(this.yPos, this.xPos, enemy.getVertY(), enemy.getVertX());
+            if (Enemy == true) {
                 enemyArray.remove(enemy);
                 set = false;
                 MapDisplay();
@@ -179,7 +179,7 @@ public class GuiMap extends JFrame {
             for (int x = 0; x < xCoordinates; x++) {
                 switch (map[y][x]) {
                     case 0:
-                        textArea.append("|      |");
+                        textArea.append("|      | t ");
                         break;
                     case 1:
                         textArea.append("|  E  |");
