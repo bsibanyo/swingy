@@ -46,7 +46,7 @@ If a hero looses a battle, he dies.
 reaches the next level experience.
 - An artifact, which he can keep or leave. Of course, winning a battle doesn’t guarantee
 that an artefact will be droped and the quality of the artefact also varies
-depending on the villain’s strenght.
+depending on the villain’s strength.
 
 ## Bonus
 
